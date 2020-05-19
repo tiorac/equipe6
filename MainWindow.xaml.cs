@@ -23,25 +23,41 @@ namespace Equipe6
         public MainWindow()
         {
             InitializeComponent();
+
+            //
             //https://www.kaggle.com/xwolf12/malicious-and-benign-websites/data
         }
+
+        public MLP mlp { get; set; }
 
         double respostasErradas = 0;
         double erroTotal = 0;
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var mlp = new MLP(9, 5, 9, 0.75);
+            var mlp = new MLP(42, 32, 2, 0.75);
+            //var mlp = new MLP(9, 5, 9, 0.75);
+            var listaTempo = new List<DateTime>();
 
+            for (int i = 0; i < 10; i++)
+            {
+                listaTempo.Add(DateTime.Now);
+                ProcessarCSV.LerArquivo(mlp);
+                listaTempo.Add(DateTime.Now);
+            }
 
-            respostasErradas = 0;
+            listaTempo.Add(DateTime.Now);
+            ProcessarCSV.TestarArquivo(mlp);
+            listaTempo.Add(DateTime.Now);
+            //ProcessarCSV.LerArquivo(mlp, true);
+            /*respostasErradas = 0;
             erroTotal = 0;
 
 
             for (int i = 0; i <= 1000; i++)
             {
                 MaisUmteste(mlp, i < 1000);
-            }
+            }*/
         }
 
         private void MaisUmteste(MLP mlp, bool treino)

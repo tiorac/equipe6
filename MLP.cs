@@ -170,7 +170,7 @@ namespace Equipe6
 
 		public void teste_valoresParaEntradas(params double[] values)
 		{
-			for (int g = 0; g < 9; g++)
+			for (int g = 0; g < A; g++)
 			{
 				x[g] =  values[g];
 			}
@@ -178,7 +178,7 @@ namespace Equipe6
 
 		public void teste_valoresParaSaidas(params double[] values)
 		{
-			for (int g = 0; g < 9; g++)
+			for (int g = 0; g < C; g++)
 			{
 				y[g] = values[g];
 			}
