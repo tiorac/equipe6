@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Equipe6
@@ -168,7 +169,7 @@ namespace Equipe6
 
 		//treinaArquivo
 
-		public void teste_valoresParaEntradas(params double[] values)
+		public void AdicionarValoresParaEntradas(params double[] values)
 		{
 			for (int g = 0; g < A; g++)
 			{
@@ -176,12 +177,17 @@ namespace Equipe6
 			}
 		}
 
-		public void teste_valoresParaSaidas(params double[] values)
+		public void AdicionarValoresParaSaidas(params double[] values)
 		{
 			for (int g = 0; g < C; g++)
 			{
 				y[g] = values[g];
 			}
+		}
+
+		public List<double> ObterResultado()
+		{
+			return o.ToList();
 		}
 	}
 }

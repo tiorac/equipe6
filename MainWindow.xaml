@@ -7,7 +7,74 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="240,126,0,0" VerticalAlignment="Top" Click="Button_Click" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="30" />
+        </Grid.RowDefinitions>
+        <Menu x:Name="menuTop" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Stretch">
+            <MenuItem Header="I" Height="30" Width="30" Click="CarregarImagem_Click" />
+            <MenuItem Header="S" Height="30" Width="30" Click="StartMenuItem_Click" />
+            <MenuItem Header="R" Height="30" Width="30" Click="RestartMenuItem_Click" />
+            <MenuItem Header="T" Height="30" Width="30" Click="Button_Click" />
+        </Menu>
+
+        <ScrollViewer Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <Grid>
+                <Image x:Name="imagem" Stretch="None" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                <!--Ellipse x:Name="desenhoRobo" Height="15" Width="15" Fill="OrangeRed" VerticalAlignment="Top" HorizontalAlignment="Left" /-->
+                <Image x:Name="desenhoRobo" Source="/Robo15.png" Stretch="None" VerticalAlignment="Top" HorizontalAlignment="Left"  />
+            </Grid>
+        </ScrollViewer>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="2">
+            <StatusBarItem Width="20">
+                <Rectangle x:Name="Sensor1_Saida" Fill="Red" Width="16" Height="20" />
+            </StatusBarItem>
+            <StatusBarItem Width="20">
+                <Rectangle x:Name="Sensor1_Parede" Fill="Red" Width="16" Height="20" />
+            </StatusBarItem>
+            <StatusBarItem Width="20">
+                <Rectangle x:Name="Sensor1_Volta" Fill="Red" Width="16" Height="20" />
+            </StatusBarItem>
+
+            <Rectangle Fill="Gray" Width="1" VerticalAlignment="Stretch" Margin="4" />
+
+            <StatusBarItem Width="20">
+                <Rectangle x:Name="Sensor2_Saida" Fill="Red" Width="16" Height="20" />
+            </StatusBarItem>
+            <StatusBarItem Width="20">
+                <Rectangle x:Name="Sensor2_Parede" Fill="Red" Width="16" Height="20" />
+            </StatusBarItem>
+            <StatusBarItem Width="20">
+                <Rectangle x:Name="Sensor2_Volta" Fill="Red" Width="16" Height="20" />
+            </StatusBarItem>
+
+            <Rectangle Fill="Gray" Width="1" VerticalAlignment="Stretch" Margin="4" />
+
+            <StatusBarItem Width="20">
+                <Rectangle x:Name="Sensor3_Saida" Fill="Red" Width="16" Height="20" />
+            </StatusBarItem>
+            <StatusBarItem Width="20">
+                <Rectangle x:Name="Sensor3_Parede" Fill="Red" Width="16" Height="20" />
+            </StatusBarItem>
+            <StatusBarItem Width="20">
+                <Rectangle x:Name="Sensor3_Volta" Fill="Red" Width="16" Height="20" />
+            </StatusBarItem>
+
+            <Rectangle Fill="Gray" Width="1" VerticalAlignment="Stretch" Margin="4" />
+
+            <StatusBarItem Width="20">
+                <Rectangle x:Name="Sensor4_Saida" Fill="Red" Width="16" Height="20" />
+            </StatusBarItem>
+            <StatusBarItem Width="20">
+                <Rectangle x:Name="Sensor4_Parede" Fill="Red" Width="16" Height="20" />
+            </StatusBarItem>
+            <StatusBarItem Width="20">
+                <Rectangle x:Name="Sensor4_Volta" Fill="Red" Width="16" Height="20" />
+            </StatusBarItem>
+
+        </StackPanel>
 
     </Grid>
 </Window>

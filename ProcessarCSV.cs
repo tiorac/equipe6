@@ -38,7 +38,7 @@ namespace Equipe6
                     listaTamanho.Add(csv[5]);
                      /*“/”, “%”, “#”, “&”, “. “, “=”*/
 
-                    mlp.teste_valoresParaEntradas(
+                    mlp.AdicionarValoresParaEntradas(
                             (urlLen < 20) ? 1: 0,
                             (urlLen >= 20 && urlLen< 30) ? 1 : 0,
                             (urlLen >= 30 && urlLen < 40) ? 1 : 0,
@@ -82,7 +82,7 @@ namespace Equipe6
                             (jsObfLen >= 900 && jsObfLen < 1000) ? 1 : 0,
                             whoIs, 
                             https);
-                    mlp.teste_valoresParaSaidas(Convert.ToDouble(label), Convert.ToDouble(!label));
+                    mlp.AdicionarValoresParaSaidas(Convert.ToDouble(label), Convert.ToDouble(!label));
                     mlp.FuncionarRede();
                     
                     if (t)
@@ -140,7 +140,7 @@ namespace Equipe6
                     else
                         eviltotal++;
 
-                    mlp.teste_valoresParaEntradas(
+                    mlp.AdicionarValoresParaEntradas(
                            (urlLen < 20) ? 1 : 0,
                            (urlLen >= 20 && urlLen < 30) ? 1 : 0,
                            (urlLen >= 30 && urlLen < 40) ? 1 : 0,
