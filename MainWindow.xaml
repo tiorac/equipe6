@@ -27,54 +27,76 @@
             </Grid>
         </ScrollViewer>
 
-        <StackPanel Orientation="Horizontal" Grid.Row="2">
-            <StatusBarItem Width="20">
-                <Rectangle x:Name="Sensor1_Saida" Fill="Red" Width="16" Height="20" />
-            </StatusBarItem>
-            <StatusBarItem Width="20">
-                <Rectangle x:Name="Sensor1_Parede" Fill="Red" Width="16" Height="20" />
-            </StatusBarItem>
-            <StatusBarItem Width="20">
-                <Rectangle x:Name="Sensor1_Volta" Fill="Red" Width="16" Height="20" />
-            </StatusBarItem>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Horizontal" Grid.Column="0">
+                <StatusBarItem Width="20">
+                    <Rectangle x:Name="Sensor1_Saida" Fill="Red" Width="16" Height="20" />
+                </StatusBarItem>
+                <StatusBarItem Width="20">
+                    <Rectangle x:Name="Sensor1_Parede" Fill="Red" Width="16" Height="20" />
+                </StatusBarItem>
+                <StatusBarItem Width="20">
+                    <Rectangle x:Name="Sensor1_Volta" Fill="Red" Width="16" Height="20" />
+                </StatusBarItem>
 
-            <Rectangle Fill="Gray" Width="1" VerticalAlignment="Stretch" Margin="4" />
+                <Rectangle Fill="Gray" Width="1" VerticalAlignment="Stretch" Margin="4" />
 
-            <StatusBarItem Width="20">
-                <Rectangle x:Name="Sensor2_Saida" Fill="Red" Width="16" Height="20" />
-            </StatusBarItem>
-            <StatusBarItem Width="20">
-                <Rectangle x:Name="Sensor2_Parede" Fill="Red" Width="16" Height="20" />
-            </StatusBarItem>
-            <StatusBarItem Width="20">
-                <Rectangle x:Name="Sensor2_Volta" Fill="Red" Width="16" Height="20" />
-            </StatusBarItem>
+                <StatusBarItem Width="20">
+                    <Rectangle x:Name="Sensor2_Saida" Fill="Red" Width="16" Height="20" />
+                </StatusBarItem>
+                <StatusBarItem Width="20">
+                    <Rectangle x:Name="Sensor2_Parede" Fill="Red" Width="16" Height="20" />
+                </StatusBarItem>
+                <StatusBarItem Width="20">
+                    <Rectangle x:Name="Sensor2_Volta" Fill="Red" Width="16" Height="20" />
+                </StatusBarItem>
 
-            <Rectangle Fill="Gray" Width="1" VerticalAlignment="Stretch" Margin="4" />
+                <Rectangle Fill="Gray" Width="1" VerticalAlignment="Stretch" Margin="4" />
 
-            <StatusBarItem Width="20">
-                <Rectangle x:Name="Sensor3_Saida" Fill="Red" Width="16" Height="20" />
-            </StatusBarItem>
-            <StatusBarItem Width="20">
-                <Rectangle x:Name="Sensor3_Parede" Fill="Red" Width="16" Height="20" />
-            </StatusBarItem>
-            <StatusBarItem Width="20">
-                <Rectangle x:Name="Sensor3_Volta" Fill="Red" Width="16" Height="20" />
-            </StatusBarItem>
+                <StatusBarItem Width="20">
+                    <Rectangle x:Name="Sensor3_Saida" Fill="Red" Width="16" Height="20" />
+                </StatusBarItem>
+                <StatusBarItem Width="20">
+                    <Rectangle x:Name="Sensor3_Parede" Fill="Red" Width="16" Height="20" />
+                </StatusBarItem>
+                <StatusBarItem Width="20">
+                    <Rectangle x:Name="Sensor3_Volta" Fill="Red" Width="16" Height="20" />
+                </StatusBarItem>
 
-            <Rectangle Fill="Gray" Width="1" VerticalAlignment="Stretch" Margin="4" />
+                <Rectangle Fill="Gray" Width="1" VerticalAlignment="Stretch" Margin="4" />
 
-            <StatusBarItem Width="20">
-                <Rectangle x:Name="Sensor4_Saida" Fill="Red" Width="16" Height="20" />
-            </StatusBarItem>
-            <StatusBarItem Width="20">
-                <Rectangle x:Name="Sensor4_Parede" Fill="Red" Width="16" Height="20" />
-            </StatusBarItem>
-            <StatusBarItem Width="20">
-                <Rectangle x:Name="Sensor4_Volta" Fill="Red" Width="16" Height="20" />
-            </StatusBarItem>
+                <StatusBarItem Width="20">
+                    <Rectangle x:Name="Sensor4_Saida" Fill="Red" Width="16" Height="20" />
+                </StatusBarItem>
+                <StatusBarItem Width="20">
+                    <Rectangle x:Name="Sensor4_Parede" Fill="Red" Width="16" Height="20" />
+                </StatusBarItem>
+                <StatusBarItem Width="20">
+                    <Rectangle x:Name="Sensor4_Volta" Fill="Red" Width="16" Height="20" />
+                </StatusBarItem>
 
-        </StackPanel>
+            </StackPanel>
+
+
+            <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right">
+                <StatusBarItem Width="20">
+                    <Rectangle x:Name="Decisao_Esq" Fill="Red" Width="16" Height="20" />
+                </StatusBarItem>
+                <StatusBarItem Width="20">
+                    <Rectangle x:Name="Decisao_Cima" Fill="Red" Width="16" Height="20" />
+                </StatusBarItem>
+                <StatusBarItem Width="20">
+                    <Rectangle x:Name="Decisao_Dir" Fill="Red" Width="16" Height="20" />
+                </StatusBarItem>
+                <StatusBarItem Width="20">
+                    <Rectangle x:Name="Decisao_Baixo" Fill="Red" Width="16" Height="20" />
+                </StatusBarItem>
+            </StackPanel>
+        </Grid>
 
     </Grid>
 </Window>

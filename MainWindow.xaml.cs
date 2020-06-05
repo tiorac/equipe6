@@ -197,7 +197,7 @@ namespace Equipe6
                     {
                         RoboAtual.AtualizarSensor((int)(desenhoRobo.ActualWidth), (int)(desenhoRobo.ActualWidth / 2), PosicaoRobo, (Bitmap)Labirinto);
                         var acao = RoboAtual.ObterAcao();
-                        MostrarStatusSensor();
+                        MostrarStatusSensor(acao);
 
                         switch (acao)
                         {
@@ -232,7 +232,7 @@ namespace Equipe6
             PlayRobo.Start();
         }
 
-        private void MostrarStatusSensor()
+        private void MostrarStatusSensor(Direcao direcao)
         {
             Sensor1_Saida.Fill = RoboAtual.Sensores[0].VerSaida ? Brushes.Blue : Brushes.Red;
             Sensor1_Parede.Fill = RoboAtual.Sensores[0].Parede ? Brushes.Blue : Brushes.Red;
@@ -249,6 +249,11 @@ namespace Equipe6
             Sensor4_Saida.Fill = RoboAtual.Sensores[3].VerSaida ? Brushes.Blue : Brushes.Red;
             Sensor4_Parede.Fill = RoboAtual.Sensores[3].Parede ? Brushes.Blue : Brushes.Red;
             Sensor4_Volta.Fill = RoboAtual.Sensores[3].JaPassou ? Brushes.Blue : Brushes.Red;
+
+            Decisao_Esq.Fill = direcao == Direcao.Esquerda ? Brushes.Blue : Brushes.Red;
+            Decisao_Cima.Fill = direcao == Direcao.Cima ? Brushes.Blue : Brushes.Red;
+            Decisao_Dir.Fill = direcao == Direcao.Direita ? Brushes.Blue : Brushes.Red;
+            Decisao_Baixo.Fill = direcao == Direcao.Baixo ? Brushes.Blue : Brushes.Red;
         }
 
         private System.Drawing.Point BuscarInicio()

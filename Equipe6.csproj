@@ -7,8 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Labirintos\labirinto 1.png" />
+    <None Remove="Labirintos\labirinto 2.png" />
+    <None Remove="Labirintos\labirinto 3.png" />
     <None Remove="Robo10.png" />
     <None Remove="Robo15.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Labirintos\labirinto 1.png" />
+    <Content Include="Labirintos\labirinto 2.png" />
+    <Content Include="Labirintos\labirinto 3.png" />
   </ItemGroup>
 
   <ItemGroup>

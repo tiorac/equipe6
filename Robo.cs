@@ -327,6 +327,18 @@ namespace Equipe6
                     break;
             }
 
+            if (direcao == Direcao.Esquerda && Sensores[0].Parede)
+                throw new Exception("Fuuuu!!");
+
+            if (direcao == Direcao.Cima && Sensores[1].Parede)
+                throw new Exception("Fuuuu!!");
+
+            if (direcao == Direcao.Direita && Sensores[2].Parede)
+                throw new Exception("Fuuuu!!");
+
+            if (direcao == Direcao.Baixo && Sensores[3].Parede)
+                throw new Exception("Fuuuu!!");
+
             return direcao;
         }
 
@@ -336,6 +348,7 @@ namespace Equipe6
                 PonteiroVolta = Historico.Count - 1;
 
             var posicaoVoltar = Historico[PonteiroVolta];
+            PonteiroVolta--;
 
             if (posicaoVoltar.X < PontoReferencia.X)
                 return Direcao.Esquerda;
@@ -345,8 +358,6 @@ namespace Equipe6
                 return Direcao.Cima;
             else if (posicaoVoltar.Y > PontoReferencia.Y)
                 return Direcao.Baixo;
-
-            PonteiroVolta--;
 
             //Se chegou aqui, é pq fudeu!!!!
             return Direcao.Baixo;
