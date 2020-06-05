@@ -195,26 +195,30 @@ namespace Equipe6
                 {
                     this.Dispatcher.Invoke(() =>
                     {
-                        RoboAtual.AtualizarSensor((int)(desenhoRobo.ActualWidth), (int)(desenhoRobo.ActualWidth / 2), PosicaoRobo, (Bitmap)Labirinto);
+                        var tamanhoRobo = (int)(desenhoRobo.ActualWidth);
+                        var tamanhoPasso = tamanhoRobo;
+                        //var tamanhoPasso = tamanhoRobo / 2;
+
+                        RoboAtual.AtualizarSensor(tamanhoRobo, tamanhoPasso, PosicaoRobo, (Bitmap)Labirinto);
                         var acao = RoboAtual.ObterAcao();
                         MostrarStatusSensor(acao);
 
                         switch (acao)
                         {
                             case Direcao.Esquerda:
-                                PosicaoRobo = new System.Drawing.Point(PosicaoRobo.X - (int)(desenhoRobo.ActualWidth / 2), PosicaoRobo.Y);
+                                PosicaoRobo = new System.Drawing.Point(PosicaoRobo.X - tamanhoPasso, PosicaoRobo.Y);
                                 break;
 
                             case Direcao.Cima:
-                                PosicaoRobo = new System.Drawing.Point(PosicaoRobo.X, PosicaoRobo.Y - (int)(desenhoRobo.ActualHeight / 2));
+                                PosicaoRobo = new System.Drawing.Point(PosicaoRobo.X, PosicaoRobo.Y - tamanhoPasso);
                                 break;
 
                             case Direcao.Direita:
-                                PosicaoRobo = new System.Drawing.Point(PosicaoRobo.X + (int)(desenhoRobo.ActualWidth / 2), PosicaoRobo.Y);
+                                PosicaoRobo = new System.Drawing.Point(PosicaoRobo.X + tamanhoPasso, PosicaoRobo.Y);
                                 break;
 
                             case Direcao.Baixo:
-                                PosicaoRobo = new System.Drawing.Point(PosicaoRobo.X, PosicaoRobo.Y + (int)(desenhoRobo.ActualHeight / 2));
+                                PosicaoRobo = new System.Drawing.Point(PosicaoRobo.X, PosicaoRobo.Y + tamanhoPasso);
                                 break;
 
                             case Direcao.CtrlZ:
@@ -225,7 +229,7 @@ namespace Equipe6
                         MoverRobo();
                     });
 
-                    Thread.Sleep(100);
+                    Thread.Sleep(150);
                 }
             });
 

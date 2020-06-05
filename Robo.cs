@@ -327,7 +327,7 @@ namespace Equipe6
                     break;
             }
 
-            if (direcao == Direcao.Esquerda && Sensores[0].Parede)
+            /*if (direcao == Direcao.Esquerda && Sensores[0].Parede)
                 throw new Exception("Fuuuu!!");
 
             if (direcao == Direcao.Cima && Sensores[1].Parede)
@@ -337,7 +337,7 @@ namespace Equipe6
                 throw new Exception("Fuuuu!!");
 
             if (direcao == Direcao.Baixo && Sensores[3].Parede)
-                throw new Exception("Fuuuu!!");
+                throw new Exception("Fuuuu!!");*/
 
             return direcao;
         }
