@@ -30,7 +30,7 @@ namespace Equipe6
             InitializeComponent();
 
             //
-            //https://www.kaggle.com/xwolf12/malicious-and-benign-websites/data
+            //
         }
 
         public MLP mlp { get; set; }
@@ -71,8 +71,6 @@ namespace Equipe6
             var valor = robo.ObterAcao();
 
             var x = 1;*/
-
-
 
 
 
@@ -196,8 +194,9 @@ namespace Equipe6
                     this.Dispatcher.Invoke(() =>
                     {
                         var tamanhoRobo = (int)(desenhoRobo.ActualWidth);
-                        var tamanhoPasso = tamanhoRobo;
-                        //var tamanhoPasso = tamanhoRobo / 2;
+                        //var tamanhoPasso = tamanhoRobo;
+                        var tamanhoPasso = tamanhoRobo / 2;
+                        //var tamanhoPasso = 1;
 
                         RoboAtual.AtualizarSensor(tamanhoRobo, tamanhoPasso, PosicaoRobo, (Bitmap)Labirinto);
                         var acao = RoboAtual.ObterAcao();
@@ -229,7 +228,7 @@ namespace Equipe6
                         MoverRobo();
                     });
 
-                    Thread.Sleep(150);
+                    Thread.Sleep(50);
                 }
             });
 

@@ -173,20 +173,10 @@ namespace Equipe6
             int posX = posicaoRobo.X, posY = posicaoRobo.Y;
             int count = 0;
 
-            if (sensor.FatorX > 0)
-                posX += tamanhoRobo / 2;
-            else if (sensor.FatorX < 0)
-                posX -= tamanhoRobo / 2;
-
-            if (sensor.FatorY > 0)
-                posY += tamanhoRobo / 2;
-            else if (sensor.FatorY < 0)
-                posY -= tamanhoRobo / 2;
-
             while (posX >= 0 && posX < labirinto.Width
                 && posY >= 0 && posY < labirinto.Height)
             {
-                if (count > tamanhoPasso)
+                if (count > (tamanhoPasso + (tamanhoRobo / 2)))
                     return false;
 
                 var cor = labirinto.GetPixel(posX, posY);
@@ -195,7 +185,7 @@ namespace Equipe6
 
                 if (sensor.FatorX != 0)
                 {
-                    for (int i = posY - (tamanhoRobo / 2); i < (posY + tamanhoRobo) / 2; i++)
+                    for (int i = posY - (tamanhoRobo / 2); i < posY + (tamanhoRobo / 2); i++)
                     {
                         cor = labirinto.GetPixel(posX, i);
                         if (cor.R == 0 && cor.G == 0 && cor.B == 0)
