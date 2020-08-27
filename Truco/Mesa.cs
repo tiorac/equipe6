@@ -15,7 +15,7 @@ namespace Equipe6.Truco
 
         public void Rodada()
         {
-            Jogador1.Carta1 = Carta.
+            
         }
     }
 }

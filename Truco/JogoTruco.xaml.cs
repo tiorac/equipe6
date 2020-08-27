@@ -21,5 +21,17 @@ namespace Equipe6.Truco
         {
             InitializeComponent();
         }
+
+        public Mesa MestaAtual
+        {
+            get
+            {
+                return (Mesa)this.DataContext;
+            }
+            set
+            {
+                this.DataContext = value;
+            }
+        }
     }
 }

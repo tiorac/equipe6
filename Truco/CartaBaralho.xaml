@@ -4,9 +4,22 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Equipe6.Truco"
-             mc:Ignorable="d" 
+             mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
-    </Grid>
+    <Border BorderBrush="#666666" BorderThickness="1" CornerRadius="8" Background="White" >
+        <Grid>
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10">
+                <TextBlock Text="{Binding LabelValorCarta}" FontSize="18" FontWeight="Bold" Foreground="{Binding Cor}" />
+                <TextBlock Text="{Binding LabelNaipeCarta}" FontSize="18" FontWeight="Bold" Foreground="{Binding Cor}" />
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Right" VerticalAlignment="Bottom" Orientation="Vertical" Margin="10" RenderTransformOrigin="0.5, 0.5">
+                <StackPanel.RenderTransform>
+                    <RotateTransform Angle="180" />
+                </StackPanel.RenderTransform>
+
+                <TextBlock Text="{Binding LabelValorCarta}" FontSize="18" FontWeight="Bold" Foreground="{Binding Cor}" />
+                <TextBlock Text="{Binding LabelNaipeCarta}" FontSize="18" FontWeight="Bold" Foreground="{Binding Cor}" />
+            </StackPanel>
+        </Grid>
+    </Border>
 </UserControl>
