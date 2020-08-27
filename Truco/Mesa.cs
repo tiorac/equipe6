@@ -9,7 +9,7 @@ namespace Equipe6.Truco
         Player Jogador1;
         Player Jogador2;
         Baralho Baralho;
-        Carta Manilha = new Carta();
+        Carta CartaVirada = new Carta();
 
         public void teste()
         {
@@ -24,7 +24,7 @@ namespace Equipe6.Truco
 
         public void Distribuir()
         {
-            Manilha = Baralho.GetTopCard();
+            CartaVirada = Baralho.GetTopCard();
 
             Jogador1.Carta1 = Baralho.GetTopCard();
             Jogador1.Carta2 = Baralho.GetTopCard();
@@ -34,5 +34,7 @@ namespace Equipe6.Truco
             Jogador2.Carta2 = Baralho.GetTopCard();
             Jogador2.Carta3 = Baralho.GetTopCard();
         }
+
+
     }
 }
