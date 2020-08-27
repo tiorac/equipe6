@@ -10,6 +10,8 @@ namespace Equipe6.Truco
         public Player Jogador2;
         public Baralho Baralho;
         public Carta CartaVirada = new Carta();
+        int ValorRodada = 1;
+        private bool Mao11 = false;
 
         public void Iniciar()
         {
@@ -19,10 +21,7 @@ namespace Equipe6.Truco
 
             Baralho.GerarBaralho();
             Distribuir(true);
-
         }
-
-
 
         public void Distribuir(bool virar)
         {
@@ -43,26 +42,66 @@ namespace Equipe6.Truco
             if (Jogador1.CartaSelecionada.Valor > Jogador2.CartaSelecionada.Valor)
             {
                 Jogador1.PontuacaoRodada++;
+
+                if (Jogador1.PontuacaoRodada >= 2 && Jogador2.PontuacaoRodada <= 2)
+                {
+                    if (Mao11)
+                    {
+                        Jogador1.PontuacaoGeral += ValorRodada;
+                    }
+                    else
+                    {
+                        Jogador1.PontuacaoGeral++;
+                    }
+
+                    Jogador1.PontuacaoRodada = 0;
+                    Jogador2.PontuacaoRodada = 0;
+                    Distribuir(false);
+                }
             }
-            else
+            else if (Jogador1.CartaSelecionada.Valor < Jogador2.CartaSelecionada.Valor)
             {
                 Jogador2.PontuacaoRodada++;
+
+                if (Jogador1.PontuacaoRodada <= 2 && Jogador2.PontuacaoRodada >= 2)
+                {
+                    if (Mao11)
+                    {
+                        Jogador2.PontuacaoGeral += ValorRodada;
+                    }
+                    else
+                    {
+                        Jogador2.PontuacaoGeral++;
+                    }
+
+                    Jogador1.PontuacaoRodada = 0;
+                    Jogador2.PontuacaoRodada = 0;
+                    Distribuir(false);
+                }
+            }
+            else if (Jogador1.CartaSelecionada.Valor == Jogador2.CartaSelecionada.Valor)
+            {
+                Jogador1.PontuacaoRodada++;
+                Jogador2.PontuacaoRodada++;
+
+                if (Jogador1.PontuacaoRodada == 3 && Jogador2.PontuacaoRodada == 3)
+                {
+                    Jogador1.PontuacaoRodada = 0;
+                    Jogador2.PontuacaoRodada = 0;
+                    Distribuir(false);
+                }
             }
 
-            if(Jogador1.PontuacaoRodada == 2)
+            if (Jogador1.PontuacaoGeral == 11 || Jogador2.PontuacaoGeral == 11)
             {
-                Jogador1.PontuacaoGeral++;
-                Jogador1.PontuacaoRodada = 0;
-                Jogador2.PontuacaoRodada = 0;
-                Distribuir(false);
+                Mao11 = true;
+                ValorRodada = 3;
             }
-            else if (Jogador1.PontuacaoRodada == 2)
-            {
-                Jogador1.PontuacaoGeral++;
-                Jogador1.PontuacaoRodada = 0;
-                Jogador2.PontuacaoRodada = 0;
-                Distribuir(false);
-            }
+        }
+
+        public void Truco(int valor)
+        {
+            ValorRodada = valor;
         }
     }
 }
