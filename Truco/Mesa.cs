@@ -12,6 +12,7 @@ namespace Equipe6.Truco
         public Carta CartaVirada = new Carta();
         int ValorRodada = 1;
         private bool Mao11 = false;
+        public bool VezJogador1 { get; set; }
 
         public void Iniciar()
         {
@@ -21,6 +22,22 @@ namespace Equipe6.Truco
 
             Baralho.GerarBaralho();
             Distribuir(true);
+
+            VezJogador1 = true;
+        }
+
+        public void SelecionarCarta(Carta carta)
+        {
+            if (VezJogador1)
+                Jogador1.SelecionarCarta(carta);
+
+            if (!VezJogador1)
+                Jogador2.SelecionarCarta(carta);
+
+            if (Jogador1.CartaSelecionada != null && Jogador2.CartaSelecionada != null)
+                Pontuar();
+            else
+                VezJogador1 = !VezJogador1;
         }
 
         public void Distribuir(bool virar)

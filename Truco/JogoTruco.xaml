@@ -13,10 +13,26 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
+        <StackPanel Orientation="Vertical">
+            <TextBlock Text="Jogador 1" />
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Pontos: " />
+                <TextBlock x:Name="textPontosJogador1" Text="0" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Rodada: " />
+                <TextBlock x:Name="textPontosRodada1" Text="0" />
+            </StackPanel>
+        </StackPanel>
+
+        
+
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-            <local:CartaBaralho x:Name="cartaJog1Carta1" Width="100" Height="150" Margin="10" DataContext="{Binding Jogador1.Carta1}" />
-            <local:CartaBaralho x:Name="cartaJog1Carta2" Width="100" Height="150" Margin="10" DataContext="{Binding Jogador1.Carta2}" />
-            <local:CartaBaralho x:Name="cartaJog1Carta3" Width="100" Height="150" Margin="10" DataContext="{Binding Jogador1.Carta3}" />
+            <local:CartaBaralho x:Name="cartaJog1Carta1" Width="100" Height="150" Margin="10" DataContext="{Binding Jogador1.Carta1}" MouseLeftButtonUp="SelecionaCarta_MouseLeftButtonUp" />
+            <local:CartaBaralho x:Name="cartaJog1Carta2" Width="100" Height="150" Margin="10" DataContext="{Binding Jogador1.Carta2}" MouseLeftButtonUp="SelecionaCarta_MouseLeftButtonUp" />
+            <local:CartaBaralho x:Name="cartaJog1Carta3" Width="100" Height="150" Margin="10" DataContext="{Binding Jogador1.Carta3}" MouseLeftButtonUp="SelecionaCarta_MouseLeftButtonUp" />
         </StackPanel>
 
 
@@ -29,10 +45,24 @@
         <local:CartaBaralho x:Name="cartaVirada" Width="100"  Height="150" Margin="10" Grid.Row="1" HorizontalAlignment="Right"  DataContext="{Binding CartaVirada}" />
 
 
+        <StackPanel Orientation="Vertical"  Grid.Row="2" VerticalAlignment="Bottom">
+            <TextBlock Text="Jogador 2" />
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Pontos: " />
+                <TextBlock x:Name="textPontosJogador2" Text="0" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Rodada: " />
+                <TextBlock x:Name="textPontosRodada2" Text="0" />
+            </StackPanel>
+        </StackPanel>
+
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
-            <local:CartaBaralho x:Name="cartaJog2Carta1" Width="100" Height="150" Margin="10" DataContext="{Binding Jogador2.Carta1}" />
-            <local:CartaBaralho x:Name="cartaJog2Carta2" Width="100" Height="150" Margin="10" DataContext="{Binding Jogador2.Carta2}" />
-            <local:CartaBaralho x:Name="cartaJog2Carta3" Width="100" Height="150" Margin="10" DataContext="{Binding Jogador2.Carta3}" />
+            <local:CartaBaralho x:Name="cartaJog2Carta1" Width="100" Height="150" Margin="10" DataContext="{Binding Jogador2.Carta1}" MouseLeftButtonUp="SelecionaCarta_MouseLeftButtonUp" />
+            <local:CartaBaralho x:Name="cartaJog2Carta2" Width="100" Height="150" Margin="10" DataContext="{Binding Jogador2.Carta2}" MouseLeftButtonUp="SelecionaCarta_MouseLeftButtonUp" />
+            <local:CartaBaralho x:Name="cartaJog2Carta3" Width="100" Height="150" Margin="10" DataContext="{Binding Jogador2.Carta3}" MouseLeftButtonUp="SelecionaCarta_MouseLeftButtonUp" />
         </StackPanel>
 
     </Grid>
