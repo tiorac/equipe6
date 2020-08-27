@@ -3,7 +3,7 @@
 
     public enum ValorCarta
     {
-        Quatro,
+        Quatro = 1,
         Cinco,
         Seis,
         Sete,

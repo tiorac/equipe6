@@ -26,6 +26,46 @@ namespace Equipe6.Truco
             VezJogador1 = true;
         }
 
+
+        public ValorCarta ValorManilha
+        {
+            get
+            {
+                var valorVirada = (int)CartaVirada.Valor;
+                valorVirada += 1;
+
+                if (valorVirada > (int)ValorCarta.Tres)
+                    return ValorCarta.Quatro;
+                else
+                    return (ValorCarta)valorVirada;
+            }
+        }
+
+        public int PesoCarta(Carta carta)
+        {
+            if (carta.Valor == ValorManilha)
+                return 10 + (int)carta.Naipe;
+
+            return (int)carta.Valor;
+        }
+
+        public int JogadorVencedor()
+        {
+            if (Jogador1.CartaSelecionada == null
+                || Jogador2.CartaSelecionada == null)
+                return -1;
+
+            var pesoCarta1 = PesoCarta(Jogador1.CartaSelecionada);
+            var pesoCarta2 = PesoCarta(Jogador2.CartaSelecionada);
+
+            if (pesoCarta1 > pesoCarta2)
+                return 1;
+            else if (pesoCarta2 > pesoCarta1)
+                return 2;
+            else
+                return 0;
+        }
+
         public void SelecionarCarta(Carta carta)
         {
             if (VezJogador1)

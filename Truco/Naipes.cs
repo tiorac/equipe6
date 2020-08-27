@@ -2,7 +2,7 @@
 {
     public enum Naipes
     {
-        Paus,
+        Paus = 1,
         Copas,
         Espada,
         Ouros
