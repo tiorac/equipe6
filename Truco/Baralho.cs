@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Equipe6.Truco
 {
-    class Baralho
+    public class Baralho
     {
         public List<Carta> Cartas = new List<Carta>();
 
