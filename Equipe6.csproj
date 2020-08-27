@@ -7,11 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Truco\Cartas.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Labirintos\labirinto 1.png" />
     <None Remove="Labirintos\labirinto 2.png" />
     <None Remove="Labirintos\labirinto 3.png" />
     <None Remove="Robo10.png" />
     <None Remove="Robo15.png" />
+    <None Remove="Truco\NewFile1.txt" />
   </ItemGroup>
 
   <ItemGroup>
