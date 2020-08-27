@@ -11,7 +11,7 @@ namespace Equipe6.Truco
         public Baralho Baralho;
         public Carta CartaVirada = new Carta();
 
-        public void teste()
+        public void Iniciar()
         {
             Jogador1 = new Player();
             Jogador2 = new Player();
@@ -20,35 +20,13 @@ namespace Equipe6.Truco
             Baralho.GerarBaralho();
             Distribuir(true);
 
-            if (Jogador1.PontuacaoGeral < 12 && Jogador2.PontuacaoGeral < 12)
-            {
-                Jogador1.PontuacaoRodada = 0;
-                Jogador2.PontuacaoRodada = 0;
-
-                if (Jogador1.PontuacaoRodada < 2 && Jogador2.PontuacaoRodada < 2)
-                {
-                    Rodada();
-                }
-
-                if (Jogador1.PontuacaoRodada == 2)
-                {
-                    Jogador1.PontuacaoGeral++;
-                }
-                else if(Jogador2.PontuacaoRodada == 2)
-                {
-                    Jogador2.PontuacaoGeral++;
-                }
-
-                Distribuir(false);
-            }
-
         }
 
 
 
         public void Distribuir(bool virar)
         {
-            if(virar)
+            if (virar)
                 CartaVirada = Baralho.GetTopCard();
 
             Jogador1.Carta1 = Baralho.GetTopCard();
@@ -60,7 +38,7 @@ namespace Equipe6.Truco
             Jogador2.Carta3 = Baralho.GetTopCard();
         }
 
-        public void Rodada()
+        public void Pontuar()
         {
             if (Jogador1.CartaSelecionada.Valor > Jogador2.CartaSelecionada.Valor)
             {
@@ -69,6 +47,21 @@ namespace Equipe6.Truco
             else
             {
                 Jogador2.PontuacaoRodada++;
+            }
+
+            if(Jogador1.PontuacaoRodada == 2)
+            {
+                Jogador1.PontuacaoGeral++;
+                Jogador1.PontuacaoRodada = 0;
+                Jogador2.PontuacaoRodada = 0;
+                Distribuir(false);
+            }
+            else if (Jogador1.PontuacaoRodada == 2)
+            {
+                Jogador1.PontuacaoGeral++;
+                Jogador1.PontuacaoRodada = 0;
+                Jogador2.PontuacaoRodada = 0;
+                Distribuir(false);
             }
         }
     }
