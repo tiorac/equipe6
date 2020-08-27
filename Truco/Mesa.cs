@@ -11,7 +11,7 @@ namespace Equipe6.Truco
         public Baralho Baralho;
         public Carta CartaVirada = new Carta();
         int ValorRodada = 1;
-        private bool Mao11 = false;
+
         public bool VezJogador1 { get; set; }
 
         public void Iniciar()
@@ -26,7 +26,6 @@ namespace Equipe6.Truco
             VezJogador1 = true;
         }
 
-
         public ValorCarta ValorManilha
         {
             get
@@ -38,6 +37,26 @@ namespace Equipe6.Truco
                     return ValorCarta.Quatro;
                 else
                     return (ValorCarta)valorVirada;
+            }
+        }
+
+        public EstadoJogo Estado
+        {
+            get
+            {
+                if (Jogador1.PontuacaoGeral < 11
+                    && Jogador2.PontuacaoGeral < 11)
+                    return EstadoJogo.Normal;
+
+                if (Jogador1.PontuacaoGeral >= 12
+                    || Jogador2.PontuacaoGeral >= 12)
+                    return EstadoJogo.Finalizado;
+
+                if (Jogador1.PontuacaoGeral == 11
+                    ^ Jogador2.PontuacaoGeral == 11)
+                    return EstadoJogo.Mao11;
+
+                return EstadoJogo.MaoDeFerro;
             }
         }
 
@@ -102,7 +121,7 @@ namespace Equipe6.Truco
 
                 if (Jogador1.PontuacaoRodada >= 2 && Jogador2.PontuacaoRodada <= 2)
                 {
-                    if (Mao11)
+                    if (Estado == EstadoJogo.Mao11)
                     {
                         Jogador1.PontuacaoGeral += ValorRodada;
                     }
@@ -124,7 +143,7 @@ namespace Equipe6.Truco
 
                 if (Jogador1.PontuacaoRodada <= 2 && Jogador2.PontuacaoRodada >= 2)
                 {
-                    if (Mao11)
+                    if (Estado == EstadoJogo.Mao11)
                     {
                         Jogador2.PontuacaoGeral += ValorRodada;
                     }
@@ -155,7 +174,6 @@ namespace Equipe6.Truco
 
             if (Jogador1.PontuacaoGeral == 11 || Jogador2.PontuacaoGeral == 11)
             {
-                Mao11 = true;
                 ValorRodada = 3;
             }
 
