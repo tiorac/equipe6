@@ -10,6 +10,7 @@ namespace Equipe6.Truco
         public Player Jogador2;
         public Baralho Baralho;
         public Carta CartaVirada = new Carta();
+        public bool VezJogador1 { get; set; }
 
         public void Iniciar()
         {
@@ -20,9 +21,22 @@ namespace Equipe6.Truco
             Baralho.GerarBaralho();
             Distribuir(true);
 
+            VezJogador1 = true;
         }
 
+        public void SelecionarCarta(Carta carta)
+        {
+            if (VezJogador1)
+                Jogador1.SelecionarCarta(carta);
 
+            if (!VezJogador1)
+                Jogador2.SelecionarCarta(carta);
+
+            if (Jogador1.CartaSelecionada != null && Jogador2.CartaSelecionada != null)
+                Pontuar();
+            else
+                VezJogador1 = !VezJogador1;
+        }
 
         public void Distribuir(bool virar)
         {
@@ -54,14 +68,20 @@ namespace Equipe6.Truco
                 Jogador1.PontuacaoGeral++;
                 Jogador1.PontuacaoRodada = 0;
                 Jogador2.PontuacaoRodada = 0;
+                Jogador1.CartaSelecionada = null;
+                Jogador2.CartaSelecionada = null;
                 Distribuir(false);
+                VezJogador1 = true;
             }
             else if (Jogador1.PontuacaoRodada == 2)
             {
                 Jogador1.PontuacaoGeral++;
                 Jogador1.PontuacaoRodada = 0;
                 Jogador2.PontuacaoRodada = 0;
+                Jogador1.CartaSelecionada = null;
+                Jogador2.CartaSelecionada = null;
                 Distribuir(false);
+                VezJogador1 = false;
             }
         }
     }
