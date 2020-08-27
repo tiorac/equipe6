@@ -11,12 +11,11 @@ namespace Equipe6.Truco
 
         public void GerarBaralho()
         {
-            List<Carta> cartas = new List<Carta>();
+            Cartas = new List<Carta>();
             
-            
-            for (int i = 0; i < 10; i++)
+            for (int i = 1; i <= 10; i++)
             {
-                for (int j = 0; j < 4; j++)
+                for (int j = 1; j <= 4; j++)
                 {
                     var carta = new Carta
                     {
@@ -24,12 +23,17 @@ namespace Equipe6.Truco
                         valor = (ValorCarta)i
                     };
 
-                    cartas.Add(carta);
+                    Cartas.Add(carta);
                 }
             }
 
+            Embaralhar();
+        }
+
+        private void Embaralhar()
+        {
             Random r = new Random();
-            Cartas = cartas.OrderBy(x => r.Next()).ToList();
+            Cartas = Cartas.OrderBy(x => r.Next()).ToList();
         }
 
         public Carta GetTopCard()

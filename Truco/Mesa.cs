@@ -87,11 +87,13 @@ namespace Equipe6.Truco
 
         public void SelecionarCarta(Carta carta)
         {
-            if (VezJogador1)
-                Jogador1.SelecionarCarta(carta);
+            if (VezJogador1
+                && !Jogador1.SelecionarCarta(carta))
+                return;
 
-            if (!VezJogador1)
-                Jogador2.SelecionarCarta(carta);
+            if ((!VezJogador1)
+                && !Jogador2.SelecionarCarta(carta))
+                return;
 
             if (Jogador1.CartaSelecionada != null && Jogador2.CartaSelecionada != null)
                 Pontuar();
