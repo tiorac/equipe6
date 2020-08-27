@@ -69,12 +69,14 @@ namespace Equipe6.Truco
                     else
                     {
                         Jogador1.PontuacaoGeral++;
-                    }
-
+                    }                  
+                        
                     Jogador1.PontuacaoRodada = 0;
                     Jogador2.PontuacaoRodada = 0;
                     Distribuir(false);
                 }
+
+                VezJogador1 = true;
             }
             else if (Jogador1.CartaSelecionada.Valor < Jogador2.CartaSelecionada.Valor)
             {
@@ -95,6 +97,7 @@ namespace Equipe6.Truco
                     Jogador2.PontuacaoRodada = 0;
                     Distribuir(false);
                 }
+                VezJogador1 = false;
             }
             else if (Jogador1.CartaSelecionada.Valor == Jogador2.CartaSelecionada.Valor)
             {
@@ -107,6 +110,7 @@ namespace Equipe6.Truco
                     Jogador2.PontuacaoRodada = 0;
                     Distribuir(false);
                 }
+                VezJogador1 = !VezJogador1;
             }
 
             if (Jogador1.PontuacaoGeral == 11 || Jogador2.PontuacaoGeral == 11)
@@ -114,6 +118,9 @@ namespace Equipe6.Truco
                 Mao11 = true;
                 ValorRodada = 3;
             }
+
+            Jogador1.CartaSelecionada = null;
+            Jogador2.CartaSelecionada = null;
         }
 
         public void Truco(int valor)
