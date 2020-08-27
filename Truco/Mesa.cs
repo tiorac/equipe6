@@ -6,10 +6,10 @@ namespace Equipe6.Truco
 {
     public class Mesa
     {
-        Player Jogador1;
-        Player Jogador2;
-        Baralho Baralho;
-        Carta CartaVirada = new Carta();
+        public Player Jogador1;
+        public Player Jogador2;
+        public Baralho Baralho;
+        public Carta CartaVirada = new Carta();
 
         public void teste()
         {

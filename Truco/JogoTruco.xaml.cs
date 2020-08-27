@@ -19,7 +19,27 @@ namespace Equipe6.Truco
     {
         public JogoTruco()
         {
+            MestaAtual = new Mesa();
+            MestaAtual.teste();
+
             InitializeComponent();
+            DesenharJogo();
+        }
+
+        public void DesenharJogo()
+        {
+            cartaJog1Carta1.CartaAtual = MestaAtual.Jogador1.Carta1;
+            cartaJog1Carta2.CartaAtual = MestaAtual.Jogador1.Carta2;
+            cartaJog1Carta3.CartaAtual = MestaAtual.Jogador1.Carta3;
+
+            cartaVirada.CartaAtual = MestaAtual.CartaVirada;
+
+            cartaJog2Carta1.CartaAtual = MestaAtual.Jogador2.Carta1;
+            cartaJog2Carta2.CartaAtual = MestaAtual.Jogador2.Carta2;
+            cartaJog2Carta3.CartaAtual = MestaAtual.Jogador2.Carta3;
+
+            //cartaJogador1.CartaAtual = MestaAtual.Jogador1.
+
         }
 
         public Mesa MestaAtual
