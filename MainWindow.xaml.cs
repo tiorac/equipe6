@@ -195,8 +195,8 @@ namespace Equipe6
                     {
                         var tamanhoRobo = (int)(desenhoRobo.ActualWidth);
                         //var tamanhoPasso = tamanhoRobo;
-                        var tamanhoPasso = tamanhoRobo / 2;
-                        //var tamanhoPasso = 1;
+                        //var tamanhoPasso = tamanhoRobo / 2;
+                        var tamanhoPasso = 1;
 
                         RoboAtual.AtualizarSensor(tamanhoRobo, tamanhoPasso, PosicaoRobo, (Bitmap)Labirinto);
                         var acao = RoboAtual.ObterAcao();
@@ -228,7 +228,7 @@ namespace Equipe6
                         MoverRobo();
                     });
 
-                    Thread.Sleep(50);
+                    //Thread.Sleep(10);
                 }
             });
 

@@ -18,15 +18,21 @@ namespace Equipe6.Truco
     /// </summary>
     public partial class CartaBaralho : UserControl
     {
-        public CartaBaralho(Carta carta)
+        public CartaBaralho()
         {
-            this.DataContext = carta;
             InitializeComponent();
         }
 
-        public Carta Carta
+        public Carta CartaAtual
         {
-            return (Carta)this.DataContext;
+            get
+            {
+                return (Carta)this.DataContext;
+            }
+            set
+            {
+                this.DataContext = value;
+            }
         }
     }
 }
