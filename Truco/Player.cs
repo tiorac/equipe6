@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Equipe6.Truco
@@ -11,6 +12,8 @@ namespace Equipe6.Truco
         public Carta Carta3 { get; set; }
 
         public Carta CartaSelecionada { get; set; }
+
+        public IControlador Controlado { get; set; }
 
         public int PontuacaoRodada;
         public int PontuacaoGeral;
@@ -39,6 +42,22 @@ namespace Equipe6.Truco
             }
 
             return false;
+        }
+
+        public List<Carta> CartasEmOrdem(ValorCarta valorManilha)
+        {
+            var lista = new List<Carta>();
+
+            if (Carta1 != null)
+                lista.Add(Carta1);
+
+            if (Carta2 != null)
+                lista.Add(Carta2);
+
+            if (Carta3 != null)
+                lista.Add(Carta3);
+
+            return lista.OrderBy(a=> a.PesoCarta(valorManilha)).ToList();
         }
     }
 }

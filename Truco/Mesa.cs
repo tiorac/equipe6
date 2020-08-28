@@ -16,7 +16,10 @@ namespace Equipe6.Truco
         public void Iniciar()
         {
             Jogador1 = new Player();
+            Jogador1.Controlado = new HumanoControlador();
             Jogador2 = new Player();
+            //Jogador2.Controlado = new RandonControlador();
+            Jogador2.Controlado = new BasicoControlador();
             Baralho = new Baralho();
 
 
@@ -59,13 +62,6 @@ namespace Equipe6.Truco
             }
         }
 
-        public int PesoCarta(Carta carta)
-        {
-            if (carta.Valor == ValorManilha)
-                return 10 + (int)carta.Naipe;
-
-            return (int)carta.Valor;
-        }
 
         public int JogadorVencedor()
         {
@@ -73,8 +69,8 @@ namespace Equipe6.Truco
                 || Jogador2.CartaSelecionada == null)
                 return -1;
 
-            var pesoCarta1 = PesoCarta(Jogador1.CartaSelecionada);
-            var pesoCarta2 = PesoCarta(Jogador2.CartaSelecionada);
+            var pesoCarta1 = Jogador1.CartaSelecionada.PesoCarta(ValorManilha);
+            var pesoCarta2 = Jogador2.CartaSelecionada.PesoCarta(ValorManilha);
 
             if (pesoCarta1 > pesoCarta2)
                 return 1;
@@ -186,6 +182,28 @@ namespace Equipe6.Truco
 
             Jogador1.CartaSelecionada = null;
             Jogador2.CartaSelecionada = null;
+        }
+
+        public Tuple<Player, Player> OrdemJogadoresAtuais()
+        {
+            if (VezJogador1)
+                return new Tuple<Player, Player>( Jogador1, Jogador2);
+            else
+                return new Tuple<Player, Player>(Jogador2, Jogador1);
+        }
+
+        public EstadoRodada ObterEstadoRodada()
+        {
+            return new EstadoRodada
+            {
+                CartaJogadaPlayer1 = Jogador1.CartaSelecionada,
+                CartaJogadaPlayer2 = Jogador2.CartaSelecionada,
+                PontosPlayer1 = Jogador1.PontuacaoGeral,
+                PontosPlayer2 = Jogador2.PontuacaoGeral,
+                RodadaPlayer1 = Jogador1.PontuacaoRodada,
+                RodadaPlayer2 = Jogador2.PontuacaoRodada,
+                ValorManilha = ValorManilha
+            };
         }
     }
 }
