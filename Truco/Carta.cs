@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Equipe6.Truco
+﻿namespace Equipe6.Truco
 {
     public class Carta
     {
@@ -29,31 +25,20 @@ namespace Equipe6.Truco
         {
             get
             {
-                switch (this.Valor)
+                return Valor switch
                 {
-                    case ValorCarta.Quatro:
-                        return "4";
-                    case ValorCarta.Cinco:
-                        return "5";
-                    case ValorCarta.Seis:
-                        return "6";
-                    case ValorCarta.Sete:
-                        return "7";
-                    case ValorCarta.Dama:
-                        return "Q";
-                    case ValorCarta.Valete:
-                        return "J";
-                    case ValorCarta.Rei:
-                        return "K";
-                    case ValorCarta.As:
-                        return "A";
-                    case ValorCarta.Dois:
-                        return "2";
-                    case ValorCarta.Tres:
-                        return "3";
-                    default:
-                        return "";
-                }
+                    ValorCarta.Quatro => "4",
+                    ValorCarta.Cinco => "5",
+                    ValorCarta.Seis => "6",
+                    ValorCarta.Sete => "7",
+                    ValorCarta.Dama => "Q",
+                    ValorCarta.Valete => "J",
+                    ValorCarta.Rei => "K",
+                    ValorCarta.As => "A",
+                    ValorCarta.Dois => "2",
+                    ValorCarta.Tres => "3",
+                    _ => "",
+                };
             }
         }
 
@@ -61,20 +46,14 @@ namespace Equipe6.Truco
         {
             get
             {
-                switch (this.Naipe)
+                return Naipe switch
                 {
-                    case Naipes.Paus:
-                        return "♣";
-                    case Naipes.Copas:
-                        return "♥";
-                    case Naipes.Espada:
-                        return "♠";
-                    case Naipes.Ouros:
-                        return "♦";
-                    default:
-                        return "";
-                }
-
+                    Naipes.Paus => "♣",
+                    Naipes.Copas => "♥",
+                    Naipes.Espada => "♠",
+                    Naipes.Ouros => "♦",
+                    _ => "",
+                };
             }
         }
 
@@ -82,7 +61,7 @@ namespace Equipe6.Truco
         {
             get
             {
-                switch (this.Naipe)
+                switch (Naipe)
                 {
                     case Naipes.Copas:
                     case Naipes.Ouros:

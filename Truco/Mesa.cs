@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 
 namespace Equipe6.Truco
@@ -10,18 +11,24 @@ namespace Equipe6.Truco
         public Player Jogador2;
         public Baralho Baralho;
         public Carta CartaVirada = new Carta();
+        public int VencedorRodada1 = 0;
 
         public bool VezJogador1 { get; set; }
 
         public void Iniciar()
         {
-            Jogador1 = new Player();
-            Jogador1.Controlado = new HumanoControlador();
-            Jogador2 = new Player();
-            //Jogador2.Controlado = new RandonControlador();
-            Jogador2.Controlado = new BasicoControlador();
-            Baralho = new Baralho();
+            Jogador1 = new Player
+            {
+                Controlado = new HumanoControlador()
+            };
 
+            Jogador2 = new Player
+            {
+                //Controlado = new RandonControlador();
+                Controlado = new BasicoControlador()
+            };
+
+            Baralho = new Baralho();
 
             Distribuir();
 
@@ -62,7 +69,6 @@ namespace Equipe6.Truco
             }
         }
 
-
         public int JogadorVencedor()
         {
             if (Jogador1.CartaSelecionada == null
@@ -100,15 +106,15 @@ namespace Equipe6.Truco
         {
             Baralho.GerarBaralho();
 
-            CartaVirada = Baralho.GetTopCard();
+            CartaVirada = Baralho.ObterCartaTopo();
 
-            Jogador1.Carta1 = Baralho.GetTopCard();
-            Jogador1.Carta2 = Baralho.GetTopCard();
-            Jogador1.Carta3 = Baralho.GetTopCard();
+            Jogador1.Carta1 = Baralho.ObterCartaTopo();
+            Jogador1.Carta2 = Baralho.ObterCartaTopo();
+            Jogador1.Carta3 = Baralho.ObterCartaTopo();
 
-            Jogador2.Carta1 = Baralho.GetTopCard();
-            Jogador2.Carta2 = Baralho.GetTopCard();
-            Jogador2.Carta3 = Baralho.GetTopCard();
+            Jogador2.Carta1 = Baralho.ObterCartaTopo();
+            Jogador2.Carta2 = Baralho.ObterCartaTopo();
+            Jogador2.Carta3 = Baralho.ObterCartaTopo();
         }
 
         public void Pontuar()
@@ -120,15 +126,20 @@ namespace Equipe6.Truco
                 _ => 1,
             };
 
-            if (JogadorVencedor() == 1)
+            var jVencedor = JogadorVencedor();
+            var rodada = Jogador1.CartasEmOrdem(ValorManilha).Count;
+
+            if (jVencedor == 1)
             {
                 Jogador1.PontuacaoRodada++;
 
-                if (Jogador1.PontuacaoRodada >= 2 && Jogador2.PontuacaoRodada <= 2)
+                if (rodada == 2)
+                    VencedorRodada1 = 1;
+                else if (Jogador1.PontuacaoRodada > 0 && Jogador1.PontuacaoRodada > Jogador2.PontuacaoRodada)
                 {
-
                     Jogador1.PontuacaoGeral += valorRodada;
 
+                    VencedorRodada1 = 0;
                     Jogador1.PontuacaoRodada = 0;
                     Jogador2.PontuacaoRodada = 0;
                     Distribuir();
@@ -136,49 +147,60 @@ namespace Equipe6.Truco
 
                 VezJogador1 = true;
             }
-            else if (JogadorVencedor() == 2)
+            else if (jVencedor == 2)
             {
                 Jogador2.PontuacaoRodada++;
 
-                if (Jogador1.PontuacaoRodada <= 2 && Jogador2.PontuacaoRodada >= 2)
+                if (rodada == 2)
+                    VencedorRodada1 = 2;
+                else if (Jogador2.PontuacaoRodada > 0 && Jogador2.PontuacaoRodada > Jogador1.PontuacaoRodada)
                 {
                     Jogador2.PontuacaoGeral += valorRodada;
 
+                    VencedorRodada1 = 0;
                     Jogador1.PontuacaoRodada = 0;
                     Jogador2.PontuacaoRodada = 0;
                     Distribuir();
                 }
+
                 VezJogador1 = false;
             }
-            else if (JogadorVencedor() == 0)
-            {
-                Jogador1.PontuacaoRodada++;
-                Jogador2.PontuacaoRodada++;
-
-                if (Jogador1.PontuacaoRodada == 3 && Jogador2.PontuacaoRodada == 3)
-                {
-                    Jogador1.PontuacaoRodada = 0;
-                    Jogador2.PontuacaoRodada = 0;
-                    Distribuir();
-                }
-                else if (Jogador1.PontuacaoRodada > Jogador2.PontuacaoRodada)
+            else if (jVencedor == 0)
+            {               
+                if (VencedorRodada1 == 1)
                 {
                     Jogador1.PontuacaoGeral += valorRodada;
 
+                    VencedorRodada1 = 0;
                     Jogador1.PontuacaoRodada = 0;
                     Jogador2.PontuacaoRodada = 0;
                     Distribuir();
                 }
-                else if (Jogador1.PontuacaoRodada < Jogador2.PontuacaoRodada)
+                else if(VencedorRodada1 == 2)
                 {
                     Jogador2.PontuacaoGeral += valorRodada;
 
+                    VencedorRodada1 = 0;
                     Jogador1.PontuacaoRodada = 0;
                     Jogador2.PontuacaoRodada = 0;
                     Distribuir();
                 }
-                VezJogador1 = !VezJogador1;
-            }  
+                else
+                {
+                    if (rodada == 0)
+                    {
+                        VencedorRodada1 = 0;
+                        Jogador1.PontuacaoRodada = 0;
+                        Jogador2.PontuacaoRodada = 0;
+                        Distribuir();
+                    }
+                    else
+                    {
+                        Jogador1.PontuacaoRodada++;
+                        Jogador2.PontuacaoRodada++;
+                    }
+                }
+            }
 
             Jogador1.CartaSelecionada = null;
             Jogador2.CartaSelecionada = null;
@@ -187,7 +209,7 @@ namespace Equipe6.Truco
         public Tuple<Player, Player> OrdemJogadoresAtuais()
         {
             if (VezJogador1)
-                return new Tuple<Player, Player>( Jogador1, Jogador2);
+                return new Tuple<Player, Player>(Jogador1, Jogador2);
             else
                 return new Tuple<Player, Player>(Jogador2, Jogador1);
         }

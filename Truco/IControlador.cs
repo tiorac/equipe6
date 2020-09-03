@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Equipe6.Truco
+﻿namespace Equipe6.Truco
 {
     public interface IControlador
     {

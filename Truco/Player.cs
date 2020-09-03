@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Equipe6.Truco
 {
@@ -57,7 +55,7 @@ namespace Equipe6.Truco
             if (Carta3 != null)
                 lista.Add(Carta3);
 
-            return lista.OrderBy(a=> a.PesoCarta(valorManilha)).ToList();
+            return lista.OrderBy(a => a.PesoCarta(valorManilha)).ToList();
         }
     }
 }

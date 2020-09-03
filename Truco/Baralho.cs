@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Equipe6.Truco
 {
@@ -36,7 +35,7 @@ namespace Equipe6.Truco
             Cartas = Cartas.OrderBy(x => r.Next()).ToList();
         }
 
-        public Carta GetTopCard()
+        public Carta ObterCartaTopo()
         {
             Carta c = Cartas[0];
             Cartas.RemoveAt(0);
