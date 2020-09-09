@@ -1,0 +1,118 @@
+Intenções	Locuções
+Reserva Hotel	Preciso de um hotel 3 estrelas
+Reserva Hotel	Quero reservar um hotel
+Reserva Hotel	Quero uma reserva
+Reserva Hotel	Hotel em {x} com valor até {y}
+Reserva Hotel	Quero um quarto com cama de casal
+Reserva Hotel	Quero uma suíte com duas camas de solteiros
+Reserva Hotel	Pode ser um hostel com quarto compartilhado
+Reserva Hotel	Preciso de uma hospedagem em {x}
+Reserva Hotel	Vou para {x} e preciso de uma hospedagem
+Reserva Hotel	Vou viajar e preciso de um local para ficar
+Reserva Hotel	Quais os hotéis próximos ao aeroporto {x}
+Reserva Hotel	Gostaria de uma reserva próximo ao aeroporto {x}
+Reserva Hotel	Quero uma reserva no hotel {x}
+Reserva Hotel	Quero informações para criar uma reserva
+Reserva Hotel	Vou estar na cidade {x} e preciso de um hotel
+Reserva Hotel	Estou na cidade {x} e estou a procura de um hotel
+Reserva Hotel	Preciso de uma reserva no hótel {x}
+Reserva Hotel	Hostels próximo ao bairro {x}
+Reserva Hotel	Hostel com suite próximo ao bairro {x}
+Reserva Hotel	Quero um hostel próximo a {x} no dia {y} para {z} pessoas
+Reserva Hotel	Quero reservar um quarto no hotel {x}
+Reserva Hotel	Quero reservar um hostel próximo a {x}
+Reserva Hotel	Quero um quarto com vista para {x}
+Reserva Hotel	Reserva para {x} pessoas e {y} animais
+Reserva Hotel	Vou ficar {x} dias na cidade {y}, preciso de uma reserva
+Reserva Hotel	Estou indo para {x}, quais as reservas disponíveis para {y} pessoas
+Reserva Hotel	Como faço uma reserva de hotel?
+Reserva Hotel	Vou viajar em {x} e não sei em qual hotel ficar
+Reserva Hotel	Vai ter o evento {x} em {y} e eu preciso de uma reserva o quanto antes
+Reserva Hotel	Quais os hóteis próximos ao evento {x}
+Reserva Hotel	Qual o melhor quarto do hotel {x}
+Reserva Hotel	Uma suite e um quarto compartilhado próximo a {x}
+Reserva Hotel	Hostels próximo a praia {x}
+Reserva Hotel	Reservas no hotel {x}
+Reserva Hotel	Reservar quarto twin room
+Passagem Aérea	Gostaria de uma passagem para {x} no dia {y}
+Passagem Aérea	Quero uma passagem para o lugar {x} no dia {y}
+Passagem Aérea	Quero ver passagens do aeroporto {x} para {y}
+Passagem Aérea	Quais os preços de passagens para o lugar {x}
+Passagem Aérea	Gostaria de passagens para o lugar {x} no dia {y}
+Passagem Aérea	Gostaria de uma passagem para {x} pessoas para o lugar {y}
+Passagem Aérea	Quero uma passagem de {x} para {y} no dia {z}
+Passagem Aérea	Quero um vôo direto para lugar {x} no dia {y}
+Passagem Aérea	Quais os vôos disponíveis do aeroporto {x} para {y} no dia {z}
+Passagem Aérea	Qual o vôo mais barato para o lugar {x} no dia {y}
+Passagem Aérea	Como faço para mudar a data do meu vôo?
+Passagem Aérea	Quero um vôo sem escala
+Passagem Aérea	Quero um vôo só de ida
+Passagem Aérea	Vôo de ida e volta para o lugar {x}
+Passagem Aérea	Vôo de ida para o lugar {x}
+Passagem Aérea	Vôos para {x}
+Passagem Aérea	Qual o último vôo para {x}
+Passagem Aérea	Como compro uma passagem área?
+Passagem Aérea	Vamos ter um evento em {x} e precisamos de {y} passagens
+Passagem Aérea	Qual o próximo vôo para {x}
+Passagem Aérea	Preciso de um vôo direto para {x}
+Passagem Aérea	Vôos com {x} escalas para {y}
+Passagem Aérea	Como faço para trocar o dia da minha viagem?
+Passagem Aérea	Qual o primeiro vôo que você tem para {x} em {y}
+Passagem Aérea	Tenho evento em {x}, quais são os vôos disponívels?
+Passagem Aérea	Vôos da companhia {x} para {y} em {z}
+Passagem Aérea	Preciso de uma passagem para {x}
+Passagem Aérea	Vôos perto do {x} horas para {y}
+Passagem Aérea	Passagem de ida e volta para {x}
+Passagem Aérea	Comprar passagem para {x}
+Passagem Aérea	Quero remarcar meu vôo
+Aluguel Carro	Gostaria de alugar um carro
+Aluguel Carro	Quais os preços para alugar um carro?
+Aluguel Carro	Como faço para alugar um carro?
+Aluguel Carro	Estou em {x} e gostaria de alugar um carro
+Aluguel Carro	Quais os preços para alugar um carro perto do aeroporto {x}?
+Aluguel Carro	Quais carros estão disponíveis para alugar na locadora {x} próximo ao aeroporto {y}?
+Aluguel Carro	Quero alugar um carro economico
+Aluguel Carro	Quero alugar um carro na locadora {x} próximo ao aeroporto {y}
+Aluguel Carro	Vou precisar de um veículo em {x}
+Aluguel Carro	Preciso de uma forma de me locomover em {x}
+Aluguel Carro	Quero um carro quatro portas?
+Aluguel Carro	Preciso de um carro
+Aluguel Carro	Como alugo um carro?
+Aluguel Carro	Quero alterar a reserva do carro {x} em nome de {y}
+Aluguel Carro	Amanhã vou estar em {x} e preciso de um carro
+Aluguel Carro	Quero alugar um carro
+Aluguel Carro	Informações para alugar um carro
+Check-In	Como faço o check-in?
+Check-In	Quanto tempo leva para fazer o check-in?
+Check-In	Não sei como faço check-in, e agora?
+Check-In	Como faço o web check-in?
+Check-In	Consigo alterar o horário do check-in?
+Check-In	Alterar o horário do check-in
+Check-In	Como altero o horário do check-in?
+Check-In	Não estou conseguindo fazer o web check-in?
+Check-In	Como faço o check-in em {x}?
+Check-In	O que é check-in?
+Check-In	Por que peciso fazer check-in?
+Check-In	Informações sobre o check-in
+Alteração de Reserva	Gostaria de alterar a minha reserva
+Alteração de Reserva	Quero alterar a minha reserva
+Alteração de Reserva	Tenho uma reserva para o dia {x} e gostaria de mudar para o dia {y}
+Alteração de Reserva	Como faço para alterar a minha reserva?
+Alteração de Reserva	Preciso alterar a minha reserva, como faço?
+Alteração de Reserva	Opções disponíveis para alterar reserva
+Alteração de Reserva	Tenho uma reserva no hotel {x} para o dia {x} em {y} e preciso fazer alteração
+Alteração de Reserva	Incluir um quarto twin room na reserva {x}
+Alteração de Reserva	Trocar o quarto da reserva {x}
+Alteração de Reserva	Alterar o quarto da reserva {x}
+Alteração de Reserva	Alterar reserva {x}
+Cancelamento da Reserva	Como cancelo a minha reserva?
+Cancelamento da Reserva	Quero cancelar a minha reserva
+Cancelamento da Reserva	Gostaria de cancelar a minha reserva
+Cancelamento da Reserva	Como faço para cancelar uma reserva?
+Cancelamento da Reserva	Se eu cancelar minha reserva, eu pago alguma taxa?
+Cancelamento da Reserva	Qual a taxa de cancelamento de reserva?
+Cancelamento da Reserva	Tem taxa para cancelar uma reserva?
+Cancelamento da Reserva	Como sei se a minha reserva foi cancelada?
+Cancelamento da Reserva	Se eu cancelar minha reserva, recebo meu dinheiro de volta?
+Cancelamento da Reserva	Cancelar reserva {x}
+Cancelamento da Reserva	Não estou conseguindo cancelar a minha reserva
