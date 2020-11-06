@@ -4,6 +4,7 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
+    <StartupObject>Equipe6.App</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
@@ -26,6 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="FileHelpers" Version="3.4.1" />
     <PackageReference Include="LumenWorksCsvReader" Version="4.0.0" />
     <PackageReference Include="System.Drawing.Common" Version="4.7.0" />
   </ItemGroup>

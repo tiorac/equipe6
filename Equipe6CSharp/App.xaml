@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Equipe6"
              xmlns:truco="clr-namespace:Equipe6.Truco"
-             StartupUri="Truco/JogoTruco.xaml">
+             StartupUri="MainWindow.xaml">
     <Application.Resources>
          
     </Application.Resources>
