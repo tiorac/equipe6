@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Equipe6", "Equipe6CSharp\Eq
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Equipe6Python", "Equipe6Python\Equipe6Python.pyproj", "{E2546CDF-2453-4E75-B407-3773B74DF424}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Equipe6Console", "Equipe6Console\Equipe6Console.csproj", "{F7DE5E21-EAC2-4961-880A-4FAF768301E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Equipe6Console", "Equipe6Console\Equipe6Console.csproj", "{F7DE5E21-EAC2-4961-880A-4FAF768301E3}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Equipe6Carros", "Equipe6Carros\Equipe6Carros.pyproj", "{AB4FEFBB-696D-4BD1-9D22-AFF0F9A651B6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +27,8 @@ Global
 		{F7DE5E21-EAC2-4961-880A-4FAF768301E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7DE5E21-EAC2-4961-880A-4FAF768301E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7DE5E21-EAC2-4961-880A-4FAF768301E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB4FEFBB-696D-4BD1-9D22-AFF0F9A651B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB4FEFBB-696D-4BD1-9D22-AFF0F9A651B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

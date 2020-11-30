@@ -6,8 +6,9 @@ using System.Text;
 namespace Equipe6.Fipe
 {
     [DelimitedRecord("\t")]
-    public class FipeCarroLinha
+    public class FipeCarroLinhaTudo
     {
+        
         public string Modelo { get; set; }
 
         public string Marca { get; set; }
@@ -16,8 +17,10 @@ namespace Equipe6.Fipe
 
         public string Combustivel { get; set; }
 
-        public string Valor { get; set; }
+        public double Valor { get; set; }
 
-        public string Bla { get; set; }
+        public string MesReferencia { get; set; }
+
+        public int AnoReferencia { get; set; }
     }
 }
