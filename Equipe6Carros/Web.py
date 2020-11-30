@@ -30,7 +30,7 @@ def index():
 
     result = pd.DataFrame.from_dict(dados, orient='columns')
 
-    return jsonify(list(forest.predict(result)))
+    return jsonify(list(forest.predict(result))[0])
 
     """return jsonify(
         ano=req["ano"],
