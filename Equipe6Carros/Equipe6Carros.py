@@ -40,7 +40,7 @@ print("Criando colunas de combustiveis")
 combustiveis = pd.get_dummies(grupoMarcas["Combustivel"])
 
 print("Criando tabela valores e marcas")
-valoresMarcas = grupoMarcas[["Ano", "MesRef", "MesRef", "DiffAno"]]
+valoresMarcas = grupoMarcas[["Ano", "MesRef", "AnoRef", "DiffAno"]]
 
 print("Criando tabela de valores")
 valores = grupoMarcas[["Valor"]]

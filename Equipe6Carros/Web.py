@@ -6,6 +6,7 @@ from flask import Flask, render_template, request, redirect, url_for, jsonify
 
 
 app = Flask(__name__)
+
 @app.route('/predicao', methods=['POST'])
 def index():
     req = request.json
@@ -46,6 +47,14 @@ def marcas():
 @app.route('/combustiveis', methods=['GET'])
 def combustiveis():
     return jsonify(list(combustiveis))
+
+@app.after_request
+def add_header(response):
+    response.headers['Access-Control-Allow-Headers'] = '*'
+    response.headers['Access-Control-Request-Method'] = 'GET, POST'
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    response.headers['Access-Control-Max-Age'] = '86400'
+    return response
 
 if __name__ == '__main__':
     port=5123
